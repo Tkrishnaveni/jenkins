@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+          label 'AGENT-1'
+    }
     stages{
         stage('Build'){
              steps{
@@ -20,7 +22,7 @@ pipeline {
             steps{
                  
                   sh 'echo this is deploy'
-                  error 'pipeline failed'
+                  
 
             }
 
