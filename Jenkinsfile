@@ -40,6 +40,7 @@ pipeline {
             steps{
                  
                   sh 'echo this is deploy '
+                  sh 'echo this is webhook example'
                   
 
             }
