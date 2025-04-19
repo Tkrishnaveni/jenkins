@@ -1,12 +1,22 @@
 pipeline {
-    agent {
-        docker{ image 'node:16-alpine' }
-    }
-    stages {
+    agent any
+   stages {
         stage('Test') {
+             agent {
+        docker{ image 'node:16-alpine' }
+             }
+    
             steps{
 
                   sh "node --version"
+            }
+        }
+        stage ('db'){
+            agent {
+                docker {image 'mysql:latest'}
+            }
+            steps{
+                sh "mysql --version"
             }
         }
     }
